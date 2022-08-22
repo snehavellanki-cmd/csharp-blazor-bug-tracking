@@ -22,12 +22,11 @@
 
 @code {
     [Inject]
-    public IBugService bugService { get; set; }
+    public IBugService BugService { get; set; }
     public List<Bug> Bugs { get; set; }
     protected override void OnInitialized()
     {
-        base.OnInitialized();
-        Bugs = bugService.GetBugs().OrderBy(x=>x.Priority).ToList();
+        Bugs = BugService.GetBugs().OrderBy(x=>x.Priority).ToList();
     }
     }
 
